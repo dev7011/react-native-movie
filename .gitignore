@@ -41,3 +41,8 @@ example
 # generated native folders
 /ios
 /android
+/.idea/.gitignore
+/.idea/material_theme_project_new.xml
+/.idea/modules.xml
+/.idea/react-native-movie.iml
+/.idea/vcs.xml
