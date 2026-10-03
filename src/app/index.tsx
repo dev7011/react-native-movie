@@ -1,10 +1,13 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, Image, StyleSheet } from "react-native";
 import "@/global.css"
+import {icons} from "@/src/constants/icons";
 
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text className= "text-red-500">Edit src/app/index.tsx to edit this screen.</Text>
+      <Image
+        source={icons.logo}></Image>
+      <Text > TEST </Text>
     </View>
   );
 }
