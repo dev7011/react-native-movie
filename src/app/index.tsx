@@ -1,21 +1,13 @@
 import { Text, View, Image, StyleSheet } from "react-native";
 import "@/global.css"
-import {icons} from "@/src/constants/icons";
+import {images} from "@/src/constants/images";
 
 export default function Index() {
   return (
-    <View style={styles.container}>
-      <Image
-        source={icons.logo}></Image>
-      <Text > TEST </Text>
+    <View className= "bg-primary flex-1 w-full">
+      <Image source={images.bg}></Image>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+const styles = StyleSheet.create({});
