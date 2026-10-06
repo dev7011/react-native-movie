@@ -5,6 +5,8 @@ import {useRouter} from "expo-router";
 import SearchBar from "@/components/search_bar";
 import useFetch from "@/services/useFetch";
 import {fetchMovies} from "@/services/api";
+import MovieList from "@/components/MovieList";
+import {SafeAreaView} from "react-native-safe-area-context";
 
 export default function Index() {
   const router = useRouter();
@@ -19,30 +21,6 @@ export default function Index() {
     // @ts-ignore
     router.push("/search");
   }
-
-  const MovieList = ()=>{
-    return (
-      <FlatList
-        data={movies}
-
-        renderItem={({ item }) => (
-          <Text className="text-white text-sm">{item.title}</Text>
-        )}
-
-        keyExtractor={(item) => item.id.toString()}
-        numColumns={3}
-        columnWrapperStyle={{
-          justifyContent: "flex-start",
-          gap: 20,
-          paddingRight: 5,
-          marginBottom: 10,
-        }}
-        className="mt-2 pb-32"
-        scrollEnabled={false}
-      />
-    )
-  }
-
 
   const MovieSection = () => {
     if (moviesError) {
@@ -60,7 +38,7 @@ export default function Index() {
           <Text className="text-lg text-white font-bold mt-5 mb-3">
             Latest Movies
           </Text>
-          <MovieList />
+          <MovieList movies = {movies}/>
         </>
       </View>
     )
@@ -76,26 +54,27 @@ export default function Index() {
     )
   }
 
-  // @ts-ignore
   return (
     <View className= "flex-1 bg-primary">
       <Image source={images.bg} className= "absolute w-full bg-primary-400 z-0"/>
+      <SafeAreaView style={{ flex: 1 }}>
       <ScrollView
         className="flex-1 px-5"
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{minHeight: "100%", paddingBottom: 10}}
       >
         <Logo />
-        { moviesLoading ? (
-            <ActivityIndicator
+        { moviesLoading
+          ? <ActivityIndicator
               size="large"
               color="#0000ff"
               className="mt-10 self-center"
             />
-          ) : (<MovieSection />)
+          : <MovieSection />
         }
 
       </ScrollView>
+      </SafeAreaView>
     </View>
   );
 }
