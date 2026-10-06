@@ -3,11 +3,9 @@ import {images} from "@/constants/images";
 import {icons} from "@/constants/icons";
 import {useRouter} from "expo-router";
 import SearchBar from "@/components/search_bar";
-import {useState} from "react";
 
 export default function Index() {
   const router = useRouter();
-  const [searchText, setSearchText] = useState<string>("")
 
   function handleSearch(){
     // @ts-ignore
@@ -31,7 +29,7 @@ export default function Index() {
         <View className= "flex-1 mt-5">
           <SearchBar
             placeholder= "search ..."
-            value= {searchText}
+            value= ""
             handleSearch = { handleSearch }
           />
         </View>
