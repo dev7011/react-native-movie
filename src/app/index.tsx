@@ -1,6 +1,6 @@
 import { Text, View, Image, StyleSheet } from "react-native";
 import "@/global.css"
-import {images} from "@/src/constants/images";
+import {images} from "@/constants/images";
 
 export default function Index() {
   return (
