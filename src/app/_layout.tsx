@@ -13,9 +13,14 @@ export default function RootLayout() {
           fontWeight: 'bold',
         },
       }}>
-
       <Stack.Screen
         name="(tabs)"
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="movie/[id]"
         options={{
           headerShown: false,
         }}
