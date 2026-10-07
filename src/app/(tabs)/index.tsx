@@ -7,6 +7,7 @@ import useFetch from "@/services/useFetch";
 import {fetchMovies} from "@/services/api";
 import MovieList from "@/components/MovieList";
 import {SafeAreaView} from "react-native-safe-area-context";
+import ThemedLoader from "@/components/ThemedLoader";
 
 export default function Index() {
   const router = useRouter();
@@ -65,11 +66,7 @@ export default function Index() {
       >
         <Logo />
         { moviesLoading
-          ? <ActivityIndicator
-              size="large"
-              color="#0000ff"
-              className="mt-10 self-center"
-            />
+          ? <ThemedLoader />
           : <MovieSection />
         }
 
