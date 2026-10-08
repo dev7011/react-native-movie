@@ -9,7 +9,6 @@ const ThemedScrollView = ({children, style, ...props}: ViewProps) => {
   return (
     <View className= "flex-1 bg-primary">
       <Image source={images.bg} className= "absolute w-full bg-primary-400 z-0"/>
-      <SafeAreaView style={{ flex: 1 }}>
         <ScrollView
           className="flex-1 px-5"
           showsVerticalScrollIndicator={false}
@@ -24,7 +23,6 @@ const ThemedScrollView = ({children, style, ...props}: ViewProps) => {
           {children}
 
         </ScrollView>
-      </SafeAreaView>
     </View>
   )
 }

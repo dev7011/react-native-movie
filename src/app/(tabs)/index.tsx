@@ -1,7 +1,6 @@
 import {View, StyleSheet, Image, Text, FlatList} from "react-native";
-import {icons} from "@/constants/icons";
 import {useRouter} from "expo-router";
-import SearchBar from "@/components/search_bar";
+import SearchBar from "@/components/SearchBar";
 import useFetch from "@/services/useFetch";
 import {fetchMovies} from "@/services/api";
 import MovieList from "@/components/MovieList";
@@ -18,7 +17,6 @@ export default function Index() {
   } = useFetch(() => fetchMovies({ query: "" }));
 
   function handleSearch(){
-    // @ts-ignore
     router.push("/search");
   }
 

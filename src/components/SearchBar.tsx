@@ -1,11 +1,11 @@
-import {StyleSheet, Image, TextInput, View} from 'react-native'
+import { Image, TextInput, View} from 'react-native'
 import {icons} from "@/constants/icons";
 
 interface Props {
   placeholder: string;
   value: string;
   handleSearch?: () => void;
-  onChangeText?: () => void;
+  onChangeText?: (value: string) => void;
 }
 
 const SearchBar = ({placeholder, handleSearch, onChangeText}: Props) => {
@@ -28,5 +28,3 @@ const SearchBar = ({placeholder, handleSearch, onChangeText}: Props) => {
 }
 
 export default SearchBar
-
-const styles = StyleSheet.create({})

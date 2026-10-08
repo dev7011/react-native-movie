@@ -2,11 +2,6 @@ import {FlatList} from 'react-native'
 import React from 'react'
 import MovieCard from "@/components/MovieCard";
 
-interface MovieListProps {
-  movies: Movie[];
-}
-
-
 const MovieList = ({ movies }: MovieListProps) => {
   return (
     <FlatList
