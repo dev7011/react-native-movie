@@ -6,12 +6,12 @@ import {
 
 const ThemedLoader = ({style, ...props}: ActivityIndicatorProps) => {
   return (
-      <ActivityIndicator
-        size="large"
-        color="#0000ff"
-        className="mt-10 self-center"
-        style= {style}
-      />
+    <ActivityIndicator
+      size="large"
+      color="#0000ff"
+      className="mt-10 self-center bg-red-500 rounded-[100%]"
+      style={style}
+    />
   )
 }
 

@@ -79,15 +79,13 @@ const Search = () => {
                 Latest Movies
               </Text>
             }
-
             {loading && <ThemedLoader />}
-
             {error && <ThemedText>Error by load movies: {error.message}</ThemedText>}
           </View>
           </>
         }
-        className="mt-2 pb-32"
         scrollEnabled={false}
+        className="mt-2 pb-32"
       />
     </ThemedScrollView>
   );
