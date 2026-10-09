@@ -1,4 +1,4 @@
-import {View, StyleSheet, Image, Text, FlatList} from "react-native";
+import {View, StyleSheet, Text} from "react-native";
 import {useRouter} from "expo-router";
 import SearchBar from "@/components/SearchBar";
 import useFetch from "@/services/useFetch";
@@ -15,10 +15,6 @@ export default function Index() {
     loading: moviesLoading,
     error: moviesError,
   } = useFetch(() => fetchMovies({ query: "" }));
-
-  function handleSearch(){
-    router.push("/search");
-  }
 
   const MovieSection = () => {
     if (moviesError) {
@@ -40,7 +36,7 @@ export default function Index() {
       <SearchBar
         placeholder= "search ..."
         value= ""
-        handleSearch = { handleSearch }
+        handleSearch = { () =>  router.push("/search") }
       />
 
       { moviesLoading
