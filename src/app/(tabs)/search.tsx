@@ -24,10 +24,6 @@ const Search = () => {
     const timeOut = setTimeout( async () => {
        if (searchQuery.trim().length > 0) {
          await loadSearchMovie();
-
-         if (movies?.length) {
-           await updateSearchCount(searchQuery, movies[0])
-         }
        }
        else {
          reset()
@@ -37,21 +33,34 @@ const Search = () => {
     return () => clearTimeout(timeOut)
   }, [searchQuery]);
 
+  useEffect(() => {
+    const timeOut = setTimeout( async () => {
+      if (movies?.length) {
+        await updateSearchCount(searchQuery, movies[0])
+      }
+      else {
+        reset()
+      }
+    }, 500)
+
+    return () => clearTimeout(timeOut)
+  }, [movies]);
+
   return (
     <ThemedScrollView>
-      <SearchBar
-        placeholder="Search input ..."
+      <SearchBar placeholder="Search input ..."
         value={searchQuery}
         onChangeText={(text) => setSearchQuery(text)}
       />
+
       <FlatList
         data={movies}
-
         renderItem={({ item }) => (
           <MovieCard {...item}/>
         )}
 
         keyExtractor={(item) => item.id.toString()}
+
         numColumns={3}
         columnWrapperStyle={{
           justifyContent: "flex-start",

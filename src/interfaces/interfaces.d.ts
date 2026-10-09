@@ -1,7 +1,3 @@
-interface MovieListProps {
-  movies: Movie[];
-}
-
 interface Movie {
   id: number,
   title: string,
@@ -19,6 +15,21 @@ interface Movie {
   vote_count: number,
   movies?: any
 }
+
+interface TrendingMovie {
+  $id?: string;
+  searchTerm: string;
+  movie_id: number;
+  title: string;
+  count: number;
+  poster_url: string;
+}
+
+interface TrendingCardProps {
+  movie: TrendingMovie;
+  index: number;
+}
+
 
 interface MovieDetails {
   adult: boolean;
