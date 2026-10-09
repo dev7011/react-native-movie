@@ -1,0 +1,8 @@
+♦️ group-routing
+  👉 mit (), z.B (post) dann href lautet nicht als
+        href=`/post/${id}`
+     sonder nur
+        href=`/${id}`
+
+♦️ Achtung mit /
+   href = "/xxx"

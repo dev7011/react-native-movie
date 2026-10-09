@@ -25,6 +25,13 @@ export default function RootLayout() {
           headerShown: false,
         }}
       />
+
+      <Stack.Screen
+        name="(post)/[id]"
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack>
   )
 }
